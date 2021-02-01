@@ -12,9 +12,7 @@ void insertion_sort_list(listint_t **list)
 {
 listint_t *estoyaca = NULL, *sig = NULL, *anterior = NULL;
 
-if (!list || !(*list) || (!(*list)->next))
-		return;
-if (list != NULL || *list != NULL)
+if (list != NULL || *list != NULL || (*list)->next != NULL)
 {
 estoyaca = (*list)->next;
 while (estoyaca)
