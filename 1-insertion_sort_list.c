@@ -36,6 +36,8 @@ print_list(*list);
 estoyaca = sig;
 }
 }
+else
+    return;
 }
 /*
 *void swapNode(list *listNode, char nameA[30], char nameB[30])
