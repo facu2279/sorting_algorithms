@@ -7,12 +7,3 @@
 /**
 *
 */
-int aux;
-    unsigned int i = 0;
-
-    while (estaordeanda(array, size) == 0)
-    {
-
-        i++;
-    }
-    }
