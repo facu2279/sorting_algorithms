@@ -56,7 +56,7 @@ j = lo;
 			A[j] = A[i];
 			A[i] = aux;
 			if (i != j)
-				print_A(A, size);
+				print_array(A, size);
 			i++;
 		}
 	}
@@ -64,6 +64,6 @@ j = lo;
 	A[i] = A[hi];
 	A[hi] = aux;
 	if (A[hi] != pivot)
-		print_A(A, size);
+		print_array(A, size);
 	return (i);
 }
