@@ -15,46 +15,55 @@ void quick_sort(int *array, size_t size)
 }
 
 /**
- * original_quick_sort -
+ * original_quick_sort - original function of quick sort
+ * @A: array received
+ * @lo: menor indice
+ * @hi: mayor indice
+ * @size: size of array
  */
-void original_quick_sort(int *array, int lo, int hi, size_t size)
+void original_quick_sort(int *A, int lo, int hi, size_t size)
 {
 	int p;
 
 	if (lo < hi)
 	{
-		p = partition(array, lo, hi, size);
-		original_quick_sort(array, lo, p - 1, size);
-		original_quick_sort(array, p + 1, hi, size);
+		p = partition(A, lo, hi, size);
+		original_quick_sort(A, lo, p - 1, size);
+		original_quick_sort(A, p + 1, hi, size);
 	}
 }
 
 /**
- * partition - 
+ * partition - partition function
+ * @A: array received
+ * @lo: menor indice
+ * @hi: mayor indice
+ * @size: size of array
+ * Return: i
  */
-int partition(int *array, int lo, int hi, size_t size)
+int partition(int *A, int lo, int hi, size_t size)
 {
 	int pivot, aux, j, i;
 
-    pivot = array[hi];
-    i = lo;
-    j = lo;
+pivot = A[hi];
+i = lo;
+j = lo;
 	for (; j <= hi; j++)
 	{
-		if (array[j] < pivot)
+		if (A[j] < pivot)
 		{
-			aux = array[j];
-			array[j] = array[i];
-			array[i] = aux;
+			aux = A[j];
+			A[j] = A[i];
+			A[i] = aux;
 			if (i != j)
-				print_array(array, size);
+				print_A(A, size);
 			i++;
 		}
 	}
-	aux = array[i];
-	array[i] = array[hi];
-	array[hi] = aux;
-	if (array[hi] != pivot)
-		print_array(array, size);
+	aux = A[i];
+	A[i] = A[hi];
+	A[hi] = aux;
+	if (A[hi] != pivot)
+		print_A(A, size);
 	return (i);
 }
